@@ -1,0 +1,26 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# bspc monitor -d I II III IV V VI VII
+
+bspc monitor -d "  " "  " "  " "  " " 5 " " 6 " " 7 "
+
+
+
+bspc config border_width         3
+bspc config window_gap           6
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# autostart
+sxhkd &
+xrandr --output Virtual-1 --mode 1920x1080 &
+picom --config $HOME/.config/picom/picom.conf &
+wal -i ~/Downloads/wallpapers/wal/ -o "$HOME/.local/bin/launch_dunst.sh" &
+$HOME/.config/polybar/launchpolybar &
+$HOME/.local/bin/launch_dunst.sh &
+killall -q pasystray && pasystray &
+

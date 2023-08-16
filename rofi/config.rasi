@@ -1,0 +1,25 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration {
+	modi: "window,drun,run,filebrowser";
+	font: "FiraCode Nerd Font Medium 12";
+	show-icons: true;
+	hide-scrollbar: false;
+	terminal: "alacritty";
+	ssh-command: "{terminal} ssh -Y {host}";
+	run-command: "{cmd}";
+	run-shell-command: "{terminal} --hold {cmd}";
+	sort: true;
+	scroll-method: 1;
+	sidebar-mode: true;
+
+	window-format: "{c}		{t}";
+	drun-display-format: "{name}";
+
+	display-filebrowser: " ";
+    display-run: " ";
+    display-drun: " ";
+    display-window: " ";
+
+	parse-known-hosts: false;
+}
